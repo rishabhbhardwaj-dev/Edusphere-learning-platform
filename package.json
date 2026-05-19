@@ -1,0 +1,17 @@
+{
+  "name": "edtech-platform-root",
+  "version": "1.0.0",
+  "description": "Root management for EdTech Platform",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install && cd server && npm install && cd ../client && npm install && cd ../ai-service && pip install -r requirements.txt",
+    "start": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\" \"cd ai-service && python main.py\"",
+    "start:windows": "powershell -ExecutionPolicy Bypass -File .\\start-all.ps1",
+    "backend": "cd server && npm run dev",
+    "frontend": "cd client && npm run dev",
+    "ai": "cd ai-service && python main.py"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
